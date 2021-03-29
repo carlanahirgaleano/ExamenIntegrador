@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+    <Dialog id="editDialog" xmlns:f="sap.ui.layout.form">
+    <Title text="{i18n>tituloEdicion}" titleStyle="H2"/>
+    <f:SimpleForm >
+            <Label text="{i18n>IDProduct}"></Label>
+            <Input value="{modelSeleccion>/ProductID}" />
+
+            <Label text="{i18n>categoria}"></Label>
+            <Input value="{modelSeleccion>/CategoryID}"/>
+
+            <Label text="{i18n>cantidadXUnidad}"></Label>
+            <Input value="{modelSeleccion>/QuantityPerUnit}" />
+
+            <Label text="{i18n>unidadesEnOrden}"></Label>
+            <Input value="{modelSeleccion>/UnitsOnOrder}" />
+
+            <Label text="{i18n>reordenarNivel}"></Label>
+            <Input value="{modelSeleccion>/ReorderLevel}" />
+            </f:SimpleForm>
+    <Button text="{i18n>cerrar}" press="onCloseDialog"/>
+    </Dialog>
+</core:FragmentDefinition>

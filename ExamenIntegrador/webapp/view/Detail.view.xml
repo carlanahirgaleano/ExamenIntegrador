@@ -1,0 +1,97 @@
+<mvc:View xmlns:semantic="sap.m.semantic" controllerName="ExamenIntegrador.ExamenIntegrador.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <semantic:DetailPage title="{i18n>product}" >
+    <ObjectHeader	
+		title="{modelSeleccion>/ProductName}"
+        number="{modelSeleccion>/UnitPrice}"		
+		numberUnit="US"
+		class="sapUiResponsivePadding--header" 
+        >
+		<statuses>
+			<ObjectStatus
+                id="stock"
+				text="{path:'modelSeleccion>UnitsInStock', formatter:'.Format.formatStock'}"
+				state="{path:'modelSeleccion>UnitsInStock' ,formatter:'.Format.formatStockColor'}" 
+               />
+		
+        </statuses>
+		<ObjectAttribute text="{i18n>category}">
+            <customContent>
+               <Text text="{modelCategoria>/CategoryID}"/>          
+             </customContent>
+        </ObjectAttribute>
+        <ObjectAttribute text="{i18n>category}">
+            <customContent>
+               <Text text="{modelCategoria>/CategoryName}"/>          
+             </customContent>
+        </ObjectAttribute>
+        <ObjectAttribute text="{i18n>category}">
+            <customContent>
+               <Text text="{modelCategoria>/Description}"/>          
+             </customContent>
+        </ObjectAttribute>
+        
+		
+	</ObjectHeader>
+	
+        <IconTabBar	expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+		    <IconTabFilter text="{i18n>informacionGeneral}" key="info" >
+            <f:SimpleForm >
+            <Label text="{i18n>IDProduct}"></Label>
+            <Text text="{modelSeleccion>/ProductID}" />
+
+            <Label text="{i18n>stock}"></Label>
+            <Text text=" {modelSeleccion>/UnitsInStock}" />
+           
+
+            <Label text="{i18n>categoria}"></Label>
+            <Text text="{modelSeleccion>/CategoryID}"/>
+
+            <Label text="{i18n>cantidadXUnidad}"></Label>
+            <Text text="{modelSeleccion>/QuantityPerUnit}" />
+
+            <Label text="{i18n>unidadesEnOrden}"></Label>
+            <Text text="{modelSeleccion>/UnitsOnOrder}" />
+
+            <Label text="{i18n>reordenarNivel}"></Label>
+            <Text text="{modelSeleccion>/ReorderLevel}" />
+            </f:SimpleForm>
+		    </IconTabFilter>
+			<IconTabFilter text="{i18n>supplier}" key="attachments">
+                <f:SimpleForm>
+
+                 <Label text="{i18n>supplier}"></Label>
+            <Text text="{modelProductID>/SupplierID}" />
+
+               <Label text="{i18n>companyName}"></Label>
+            <Text text="{modelProductID>/CompanyName}" />
+
+               <Label text="{i18n>contactName}"></Label>
+            <Text text="{modelProductID>/ContactName}" />
+
+            <Label text="{i18n>contactTitle}"></Label>
+            <Text text="{modelProductID>/ContactTitle}" />
+
+            <Label text="{i18n>adress}"></Label>
+            <Text text="{modelProductID>/Address}" />
+
+            <Label text="{i18n>city}"></Label>
+            <Text text="{modelProductID>/City}" />
+
+            <Label text="{i18n>Region}"></Label>
+            <Text text="{modelProductID>/Region}" /> 
+
+				</f:SimpleForm>
+			</IconTabFilter>
+						
+		</items>
+	</IconTabBar>
+
+        <Button text="{i18n>edit}" type="Emphasized" press="onOpenDialog"/>
+         <Button text="{i18n>delete}" press="onDelete"/>
+          <Button text="{i18n>copy}" press="onCopy"/>
+    </semantic:DetailPage>
+</mvc:View>

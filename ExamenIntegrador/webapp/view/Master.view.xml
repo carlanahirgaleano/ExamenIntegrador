@@ -1,0 +1,16 @@
+<mvc:View controllerName="ExamenIntegrador.ExamenIntegrador.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+
+		
+			<Page title="{i18n>listaProductos}" > 
+            <Title title="{listaProductos>/cantidadProductos}"></Title>
+                <SearchField width="90%" class="sapUiSmallMargin"  liveChange="onSearch"/>
+					 <content>
+        <List mode="SingleSelectMaster"  selectionChange="onListItemPress" items="{modelProductos>/value}" id="listProducts">
+            <items>
+                <StandardListItem title="{modelProductos>ProductName}" type="Active" info="{modelProductos>UnitPrice}" press="onListItemPress"/>
+                </items>
+        </List>    
+    </content>
+				</Page> 
+		
+</mvc:View>
