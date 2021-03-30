@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ViewSettingsDialog confirm="onFilterDialogConfirm">
+        <filterItems>
+        <ViewSettingsFilterItem text="{i18n>nombreProducto}" key="ProductName"  selected="true" />
+        <ViewSettingsFilterItem text="{i18n>IDProduct}" key="ProductID"/>       
+        <ViewSettingsFilterItem text="{i18n>unitPrice}" key="UnitPrice"/>                    
+      </filterItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

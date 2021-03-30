@@ -1,13 +1,28 @@
-<mvc:View controllerName="ExamenIntegrador.ExamenIntegrador.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="ExamenIntegrador.ExamenIntegrador.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
 
 		
-			<Page title="{i18n>listaProductos}" > 
-            <Title title="{listaProductos>/cantidadProductos}"></Title>
-                <SearchField width="90%" class="sapUiSmallMargin"  liveChange="onSearch"/>
-					 <content>
+			
+    <Page title="{i18n>listaProductos} ({listaProductos>/})" >          
+       
+    
+    <OverflowToolbar id="vsdFilterBar" >
+        <Text id="vsdFilterLabel"/>       
+         <HBox>
+        <Button tooltip="Ordenar" icon="sap-icon://sort" press="onSort" />                    
+        <Button tooltip="Filtrar" icon="sap-icon://filter" press="onFilter"/> 
+         </HBox>
+          <SearchField width="50%" class="sapUiSmallMargin" placeholder="{i18n>search}"  liveChange="onSearch"/>
+    </OverflowToolbar>
+    
+          
+             
+                    
+		<content>
         <List mode="SingleSelectMaster"  selectionChange="onListItemPress" items="{modelProductos>/value}" id="listProducts">
             <items>
-                <StandardListItem title="{modelProductos>ProductName}" type="Active" info="{modelProductos>UnitPrice}" press="onListItemPress"/>
+                <StandardListItem title="{modelProductos>ProductName}" type="Active" info="{path:'modelProductos>UnitPrice', formatter:'.Format.formatPrice'}" press="onListItemPress"/>
                 </items>
         </List>    
     </content>

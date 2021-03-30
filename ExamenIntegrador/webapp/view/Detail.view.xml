@@ -4,15 +4,15 @@
     <semantic:DetailPage title="{i18n>product}" >
     <ObjectHeader	
 		title="{modelSeleccion>/ProductName}"
-        number="{modelSeleccion>/UnitPrice}"		
+        number="{path:'modelSeleccion>/UnitPrice', formatter:'.Format.formatPrice'}"		
 		numberUnit="US"
 		class="sapUiResponsivePadding--header" 
         >
 		<statuses>
 			<ObjectStatus
                 id="stock"
-				text="{path:'modelSeleccion>UnitsInStock', formatter:'.Format.formatStock'}"
-				state="{path:'modelSeleccion>UnitsInStock' ,formatter:'.Format.formatStockColor'}" 
+				text="{path:'modelSeleccion>/UnitsInStock', formatter:'.Format.formatStock'}"
+				
                />
 		
         </statuses>
@@ -81,7 +81,7 @@
             <Label text="{i18n>city}"></Label>
             <Text text="{modelProductID>/City}" />
 
-            <Label text="{i18n>Region}"></Label>
+            <Label text="{i18n>region}"></Label>
             <Text text="{modelProductID>/Region}" /> 
 
 				</f:SimpleForm>

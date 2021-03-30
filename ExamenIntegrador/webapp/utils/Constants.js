@@ -26,6 +26,10 @@ sap.ui.define([
                 },
                 ENTITYS:{
                     products :"/V3/Northwind/Northwind.svc/Products"  
+                },
+                VIEWS:{
+                    routeDetail : "RouteDetail",
+                    routeMaster: "RouteMaster"
                 }
             }
 
